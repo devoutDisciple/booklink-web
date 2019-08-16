@@ -59,6 +59,7 @@ class EditDialog extends React.Component {
 				// });
 				if(!this.cropper) {
 					AxiosRequest.post(baseUrl + '/book/list/edit', formData).then(res => {
+						formData.append('modify', 1);
 						this.setState({loading: false});
 						if(res.success) {
 							this.props.onCloseDialog();
@@ -69,6 +70,7 @@ class EditDialog extends React.Component {
 					});
 				}
 				this.cropper.getCroppedCanvas().toBlob(async (blob) => {
+					formData.append('modify', 2);
 					formData.append('file', blob);
 					AxiosRequest.post(baseUrl + '/book/list/edit', formData).then(res => {
 						this.setState({loading: false});
@@ -108,7 +110,7 @@ class EditDialog extends React.Component {
 			dom.innerHTML = '';
 			dom.appendChild(image);
 			self.cropper = new Cropper(image, {
-				aspectRatio: 8 / 8,
+				aspectRatio: 72 / 97,
 				zoomable: false
 			});
 		};
