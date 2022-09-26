@@ -68,7 +68,7 @@
     "less": "^3.7.1",
     "less-loader": "^4.1.0",
     "less-plugin-clean-css": "^1.5.1",
-    "pm2": "^3.4.1",
+    "pm2": "^5.2.0",
     "postcss-loader": "^3.0.0",
     "prop-types": "^15.7.2",
     "react-hot-loader": "^4.3.4",
